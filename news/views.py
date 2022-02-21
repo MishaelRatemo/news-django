@@ -4,7 +4,7 @@ import datetime as dt
 
 
 def welcome(request):
-    return HttpResponse('<h1>Welcome to Django  development</h1> <br> <h3><a href="today/">today</a></h3>')
+    return render(request, 'welcome.html')
 
 def news_of_day(request):
     date = dt.date.today()
