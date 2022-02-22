@@ -10,3 +10,9 @@ class EditorTestClass(TestCase):
     # Testing  instance to confirm that the object is being instantiated correctly.
     def test_instance(self):
         self.assertTrue(isinstance(self.widen,Editor))   
+
+    #Testing Save Method
+    def test_save_method(self):
+        self.widen.save_editor()
+        editors = Editor.objects.all()
+        self.assertTrue(len(editors) > 0)
