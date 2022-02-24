@@ -43,7 +43,8 @@ def article(request,article_id):
     try:
         article = Article.objects.get(id = article_id)
     except ObjectDoesNotExist:
-        raise Http404()
+        # raise Http404()
+        return render(request , '404.html')
     return render(request,"all-news/article.html", {"article":article})
 
     
