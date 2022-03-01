@@ -2,7 +2,7 @@
 
 {% block content %}
     {{block.super}}
-    <div class='container'>
+    <div class='container' >
          <!-- Looping through news   -->
         {% for news_item in news %}
             <div class="row border justify-content-center d-flex ">
@@ -28,5 +28,13 @@
                 <h2 class="text-center">There are No News Items</h2>
             </div>
         {% endfor %}
+        <div class="shadow  p-5 m-auto w-50 rtounded" style="background-color:rgb(255, 255, 255)">
+            <form action="{% url 'newsToday' %}" method="post">
+                {% csrf_token %}
+                
+                {{letterForm}}
+                <input type="submit" class="btn btn-primary" value="Subscribe">
+            </form>
+        </div>
     </div>
 {% endblock %}
