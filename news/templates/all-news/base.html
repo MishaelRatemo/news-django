@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
   {% endblock %}
 </head>
-<body>
+<body style="background-color:rgb(214, 213, 213)">
   {% include "navbar.html" %}
     {% block content %} 
         <h1 class='text-center bg-dark text-success p-2'>News for {{date|date:"D d-M Y"}}</h1> 
