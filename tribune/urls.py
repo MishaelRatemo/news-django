@@ -16,9 +16,15 @@ Including another URLconf
 # from django.urls import include
 from django.contrib import admin
 from django.urls import path,include
+# from django_registration.backends.one_step.views import RegistrationView 
+# from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news.urls')),
+    # path('accounts/register/', RegistrationView.as_view(success_url='/profile/'), name='django_registration_register'),
     path('accounts/', include('registration.backends.simple.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
+    # path('logout/', LogoutView.as_view(), {"next_page": '/'}), 
 ]
