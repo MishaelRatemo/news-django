@@ -1,5 +1,5 @@
 {%extends 'all-news/base.html'%}
-
+{% load static%}
 {% block content %}
     {{block.super}}
     <div class='container' >
@@ -29,7 +29,7 @@
             </div>
         {% endfor %}
         <div class="shadow  p-5 m-auto w-50 rtounded" style="background-color:rgb(255, 255, 255)">
-            <form action="{% url 'newsToday' %}" method="post">
+            <form action="{% url 'newsletter' %}" method="post">
                 {% csrf_token %}
                 
                 {{letterForm}}
@@ -37,4 +37,8 @@
             </form>
         </div>
     </div>
+{% endblock %}
+{% block scripts %}
+ {{block.super}}
+  <script type="text/javascript" src="{%static 'js/newsletter.js'%}"></script>
 {% endblock %}
